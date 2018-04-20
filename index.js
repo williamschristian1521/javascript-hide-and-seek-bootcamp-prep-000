@@ -26,7 +26,7 @@ while (current.length > 0)
 {
   for (let i = 0; i < current.length; i++)
   {
-    next.push(current[i].children[0])
+    next.push(current[i].children[i])
   }
   current = next.shift()
 }
