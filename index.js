@@ -19,19 +19,16 @@ function increaseRankBy(n)
 
 function deepestChild()
 {
-  let current = document.querySelectorAll('div#grand-node')
-  let next = [] 
-  let target = null
-  while (current)
+
+let current = document.querySelectorAll('#grand-node')
+next = []
+while (current.length > 0)
+{
+  for (let i = 0; i < current.length; i++)
   {
-    for(let i = 0; i < current.length; i++)
-    {
-      
-        next.push(current[i].children)
-      
-    }
-    target = current
-    current = next.shift()
+    next.push(current[i].children[0])
   }
-  return target
+  current = next.shift()
+}
+return current
 }
